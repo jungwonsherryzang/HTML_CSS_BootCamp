@@ -97,3 +97,33 @@ a.active {
 .card img:hover {
   opacity: 0.7;
 }
+
+
+/* working on making website responsive */
+@media only screen and (max-width: 1000px) {
+  /* making it to look strech */
+  .card {
+    width: 100%;
+  }
+
+  .about {
+    margin: 100px 0 100px 100px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  /* removing some space on left and right  -> removing padding on .card and .gallery*/
+  .card {
+    padding: 0;
+  }
+
+  .gallery {
+    padding: 8px;
+  }
+
+  .about {
+    margin: 100px auto;
+    /* still too wide because of min-width */
+    min-width: 450px;
+  }
+}
