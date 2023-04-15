@@ -174,3 +174,49 @@ footer img {
 .footer-content {
   text-align: center;
 }
+
+/* making it to responsive */
+@media only screen and (max-width: 1000px) {
+  .hero-content, .blog-content, .events-content {
+    padding: 0 5%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .tagline {
+    font-size: 3.5rem;
+  }
+
+  .two-column-section > p {
+    width: 100%;
+  }
+
+  /* to adjust about the ul list */
+  .two-column-section .skills {
+    width: 100%;
+  }
+
+  .two-column-section .blog-posts {
+    width: 100%;
+  }
+
+  /* only making some points to bold */
+  .section-heading {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .tagline {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  /* moving bnutton to the righttitle to the left and hiding the links */
+  .links {
+    display: none;
+  }
+}
+
