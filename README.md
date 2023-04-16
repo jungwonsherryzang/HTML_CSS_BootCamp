@@ -8,3 +8,5 @@ Repository for my HTML/CSS Bootcamp Projects including mini-projects and big pro
 ## Mini Project 3: CV_Project
 
 ## Mini Project 4: CostEstimator_Project
+
+## Mini Project 5: Portfolio_Project
