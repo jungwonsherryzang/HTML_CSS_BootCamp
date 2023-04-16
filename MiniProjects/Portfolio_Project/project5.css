@@ -1,0 +1,221 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 0;
+}
+
+.navbar .left {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.navbar .right {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .right a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .right a:hover {
+  text-decoration: underline;
+}
+
+.navbar .right img{
+  width: 24px;
+  height: 24px;
+}
+
+.navbar .bar {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+.project {
+  /* being parent position of .project .overlay */
+  position: relative;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  /* indicating this image how it should fit within the parent element */
+  object-fit: cover;
+}
+
+/* setting 'VIEW PROJECT' as an overlay */
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); /* setting ON when we hover */
+  /* to locate it to the center - vertically and horizontally centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0; /* when no hovering, overlay section should not be appeared */
+  transition: all 0.2s ease;
+}
+
+.project .overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.overlay .white {
+  color: white;
+}
+
+
+/* setting grid of photos */
+.project-grid {
+  display: grid;
+  grid-template-areas:
+  "eth eth alphabet"
+  "eth eth traveler"
+  "astro cube traveler"
+  "cup insta insta"
+  "cup insta insta"
+  "foam foam dimensional"
+  "foam foam dimensional";
+  grid-gap: 16px;
+  width: 100%;
+  /* max-width: 90%; */
+  /* margin: 0 auto; make it to center */
+}
+
+#eth {
+  grid-area: eth;
+}
+
+#alphabet {
+  grid-area: alphabet;
+}
+
+#astro {
+  grid-area: astro;
+}
+
+#cube {
+  grid-area: cube;
+}
+
+#traveler {
+  grid-area: traveler;
+}
+
+#cup {
+  grid-area: cup;
+}
+
+#insta {
+  grid-area: insta;
+}
+
+#foam {
+  grid-area: foam;
+}
+
+#dimensional {
+  grid-area: dimensional;
+}
+
+
+.footer {
+  text-align: center;
+  padding: 64px;
+}
+
+
+
+
+/* Grid Responsive setting */
+@media only screen and (max-width: 1100px) {
+  .container {
+    max-width: 100%;
+  }
+  /* modifying the grid positions -> having two columns except some big images */
+  .project-grid {
+    grid-template-areas:
+    "eth eth"
+    "alphabet traveler"
+    "astro cube"
+    "insta insta"
+    "cup foam"
+    "dimensional dimensional";
+    max-width: 100%; /* reducing the sapce on the left and right side */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+    /* making it evenly wider */
+    box-sizing: border-box;
+    /* want to make the navbar fixed when I scroll down and showing up above the content -> z-index */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+  }
+
+  /* to hide the navbar right when it shrinks */
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* modifying the grid positions -> having most two columns */
+  .project-grid {
+    grid-template-areas:
+    "eth eth"
+    "alphabet alphabet"
+    "traveler traveler"
+    "cube astro"
+    "insta insta"
+    "cup cup"
+    "foam foam"
+    "dimensional dimensional";
+
+    margin-top: 100px;
+  }
+
+  .project .overlay {
+    font-size: 24px;
+  }
+}
