@@ -40,7 +40,7 @@ body {
   height: 24px;
 }
 
-.navbar .bar {
+.navbar .bar1, .bar2, .bar3 {
   background-color: black;
   height: 4px;
   width: 36px;
@@ -50,6 +50,10 @@ body {
 
 .navbar .hamburger {
   display: none;
+}
+
+.navbar .hamburger:hover {
+  cursor: pointer;
 }
 
 .project {
@@ -218,4 +222,99 @@ body {
   .project .overlay {
     font-size: 24px;
   }
+}
+
+
+
+
+/* making an animations */
+/* removing the second bar when we click the hamburger */
+@keyframes fadeBar2 {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* making the first and third bar rotating */
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    /* translate(how much want to move down) */
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    /* translate(how much want to move up) */
+    transform: rotate(-45deg) translate(4px, -10px);
+  }
+}
+
+
+
+/* making a class for applying JavaScript*/
+.animateBar1 {
+  animation: flipBar1 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar2 {
+  animation: fadeBar2 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animateBar3 {
+  animation: flipBar3 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+/* CSS setting for drawers */
+.mobileNav {
+  width: 80px;
+  background-color: white;
+  height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -160px;
+  /* connecting with .openDrawer transform */
+  transition: transform 0.3s;
+}
+
+.mobileNav img {
+  width: 24px;
+  height: 24px;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: black;
+  margin: 16px 0;
+}
+
+.mobileNav a:hover {
+  text-decoration: underline;
+}
+
+
+.openDrawer {
+  /* making it slide it back */
+  transform: translateX(-160px);
 }
